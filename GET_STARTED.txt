@@ -1,0 +1,101 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                     🎮 GET STARTED IN 3 STEPS 🎮                             ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ STEP 1: INSTALL (one-time)                                                   │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  pip install opencv-python numpy pillow
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ STEP 2: RUN                                                                  │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  python enhanced_launcher.py
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ STEP 3: VIEW RESULTS                                                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  Check outputs/ folder:
+    • enhanced_heatmap_TIMESTAMP.png
+    • tracking_data_TIMESTAMP.json
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         THAT'S IT! 🎉                                        ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+WHAT YOU GET:
+
+  📍 Player Heatmaps
+    • Purple team (your team) in purple heat
+    • Orange team (enemy) in orange heat
+    • Shows where each team spends most time
+
+  ⏱️ Creep Uptime (cyan circles with MM:SS)
+    • Shows how long each creep camp was alive
+    • Example: "02:30" = alive for 2 min 30 sec
+    • Low time = heavily contested
+    • High time = ignored/uncontested
+
+  🎯 Objective Uptime (yellow circles with MM:SS)
+    • Shows how long objectives were alive
+    • Regieleki, Regice, etc.
+    • Helps analyze objective control
+
+  🗺️ Accurate Map Overlay
+    • Everything overlaid on Theia Sky Ruins map
+    • Coordinates perfectly aligned
+    • 560x420 resolution
+
+HOW IT WORKS:
+
+  1. Script waits for minimap to appear
+  2. Captures 1 screenshot per second for 10 minutes
+  3. Detects:
+     - Pokemon players (purple/orange)
+     - Creep camps (dark yellow circles)
+     - Objectives (yellow Pokemon faces)
+  4. Processes everything at the end
+  5. Generates heatmap with all overlays
+  6. Auto-deletes temp screenshots
+
+CONFIGURATION:
+
+  Want to change something? Edit enhanced_launcher.py:
+
+  DELETE_TMP_SCREENSHOTS = False   # Keep screenshots for debugging
+  MAX_TRACKING_SECONDS = 300       # Track for 5 min instead of 10
+  PURPLE_COLOR = (150, 50, 150)    # Change purple color
+  ORANGE_COLOR = (20, 120, 255)    # Change orange color
+
+TROUBLESHOOTING:
+
+  Minimap not detected?
+    • Make sure Pokemon Unite is running
+    • Keep minimap visible (not obscured)
+    • Need 3+ Pokemon visible to detect
+
+  No creeps/objectives?
+    • Set DELETE_TMP_SCREENSHOTS = False
+    • Check tmp_screenshots/ folder
+    • May need to adjust HSV color ranges
+
+  Wrong coordinates?
+    • Make sure using theiaskyruins.png
+    • Minimap should be roughly square
+    • Script auto-adjusts aspect ratio
+
+MORE INFO:
+
+  📖 README_ENHANCED.md
+     Complete documentation with examples
+
+  📋 ENHANCED_QUICK_GUIDE.txt
+     Configuration and parameters
+
+  📝 IMPLEMENTATION_SUMMARY.txt
+     Technical details and specifications
+
+ENJOY YOUR ENHANCED ANALYSIS! 🎮✨
